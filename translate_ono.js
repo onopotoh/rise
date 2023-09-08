@@ -46,18 +46,18 @@ checkForTargetElement();
 
 const style = document.createElement('style');
 style.textContent = `
-    iframe[id=":1.container"] { display: none !important; }
-    body { top: 0 !important; }
-    .goog-logo-link { display: none !important; }
-    .goog-te-gadget { display: inline-block !important; color: transparent !important; }
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none; }
-    .goog-te-combo { display: none !important; }
-    .skiptranslate.goog-te-gadget { padding-left: 60px; padding-bottom: 20px; }
-    #goog-gt-tt #goog-gt-vt { display: none !important; }
-    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }
-    //.goog-te-menu-value span { display: none; } // Hide "Select Language" text
-    .goog-te-menu-value:hover { cursor: pointer; }
-    .goog-te-menu2-item { display: inline-block; margin-right: 10px; cursor: pointer; }
+   iframe[id=":1.container"] { display: none !important; } body {top:0!important }; 
+   .goog-logo-link{display:none !important;}.goog-te-gadget{ color:transparent!important;} 
+   .VIpgJd-ZVi9od-l4eHX-hSRGPd{display: none} 
+   .goog-te-combo { background-color:#fff; 
+   color:#000000; border: 1px solid transparent; 
+   box-shadow: 0 4px 4px rgba(0,0,0,.1); 
+   border-radius:3px; 
+   padding:6px 8px; 
+   transition: transform .3s;} 
+   .skiptranslate.goog-te-gadget{ padding-left: 60px; padding-bottom: 20px;} 
+   #goog-gt-tt #goog-gt-vt{ display: none !important; } 
+   .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }
 `;
 document.head.appendChild(style);
 
