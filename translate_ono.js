@@ -22,11 +22,9 @@ function createGoogleTranslateWidget() {
                 includedLanguages: 'id,en-GB,en',
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
-            
         }
     }
 }
-
 
 function checkForTargetElement() {
     const targetElement = document.querySelector('.one-page-cover-info');
@@ -62,4 +60,3 @@ style.textContent = `
    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }
 `;
 document.head.appendChild(style);
-
