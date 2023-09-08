@@ -18,60 +18,63 @@ function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-  function translateText(text, targetLanguage) {
+function translateText(text, targetLanguage) {
     const apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${text}`;
 
     return fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => data[0][0][0])
-      .catch(error => {
-        console.error(error);
-        return text; // Return the original text on error
-      });
-  }
+        .then(response => response.json())
+        .then(data => data[0][0][0])
+        .catch(error => {
+            console.error(error);
+            return text; // Return the original text on error
+        });
+}
 
-  function translatePage(targetLanguage) {
+function translatePage(targetLanguage) {
     const targetElement = document.querySelector('.one-page-cover-info');
     const textNodes = getTextNodes(targetElement);
 
     Promise.all(textNodes.map(node => {
-      const text = node.textContent.trim();
-      return translateText(text, targetLanguage)
-        .then(translatedText => {
-          node.textContent = translatedText;
-        });
+        const text = node.textContent.trim();
+        return translateText(text, targetLanguage)
+            .then(translatedText => {
+                node.textContent = translatedText;
+            });
     }))
-    .then(() => {
-      console.log('Translation complete.');
-    })
-    .catch(error => {
-      console.error('Translation error:', error);
-    });
-  }
+        .then(() => {
+            console.log('Translation complete.');
+        })
+        .catch(error => {
+            console.error('Translation error:', error);
+        });
+}
 
-  function getTextNodes(element) {
+function getTextNodes(element) {
     const walker = document.createTreeWalker(
-      element,
-      NodeFilter.SHOW_TEXT,
-      null,
-      false
+        element,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
     );
 
     const textNodes = [];
     let currentNode;
 
     while ((currentNode = walker.nextNode())) {
-      textNodes.push(currentNode);
+        textNodes.push(currentNode);
     }
 
     return textNodes;
-  }
+}
 
-  // Initialize the translation when the page loads
-  window.addEventListener('load', function () {
+// Initialize the translation when the page loads
+window.addEventListener('load', function () {
     translatePage('id'); // Change 'id' to your target language code
-  }
+});
 
+// The following code appears to be for Google Translate, which is not part of the previous code
+// If you need to integrate Google Translate, you can add it separately
+// Ensure you have the necessary Google Translate API code and libraries for this part
 function initializeGoogleTranslate() {
     new google.translate.TranslateElement({
         pageLanguage: 'id',
@@ -80,10 +83,9 @@ function initializeGoogleTranslate() {
 }
 
 function checkForTargetElement() {
-    const targetElement = document.querySelector('.one-page-cover-info');
     const buttonExists = document.querySelector('#google_translate_element');
 
-    if (targetElement && !buttonExists) {
+    if (!buttonExists) {
         createGoogleTranslateWidget();
     }
 }
