@@ -19,7 +19,7 @@ function createGoogleTranslateWidget() {
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'en,id,my'
+                includedLanguages: 'en,id,ms'
                 //layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
         }
