@@ -20,6 +20,8 @@ function createGoogleTranslateWidget() {
             new google.translate.TranslateElement({
                 pageLanguage: 'id',
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
+                includedLanguages: 'en,id', // Limit translation to English and Indonesian
+                defaultLanguage: 'id', // Set the default language
             }, 'google_translate_element');
         }
     }
