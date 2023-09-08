@@ -42,9 +42,11 @@ const observer = new MutationObserver(() => {
 
 observer.observe(document.body, { childList: true, subtree: true });
 
-checkForTargetElement(); 
-  const style = document.createElement('style');
-    style.textContent =  'iframe[id=":1.container"] { display: none !important; }
+checkForTargetElement();
+
+const style = document.createElement('style');
+style.textContent = `
+    iframe[id=":1.container"] { display: none !important; }
     body { top: 0 !important; }
     .goog-logo-link { display: none !important; }
     .goog-te-gadget { display: inline-block !important; color: transparent !important; }
@@ -57,4 +59,5 @@ checkForTargetElement();
     .goog-te-menu-value:hover { cursor: pointer; }
     .goog-te-menu2-item { display: inline-block; margin-right: 10px; cursor: pointer; }
 `;
-    document.head.appendChild(style);
+document.head.appendChild(style);
+
