@@ -21,14 +21,6 @@ function createGoogleTranslateWidget() {
                 pageLanguage: 'id',
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
-
-            const translateDiv = document.querySelector('#google_translate_element');
-
-            translateDiv.querySelectorAll('.goog-te-menu-item').forEach((item) => {
-                if (item.textContent !== 'Indonesia' && item.textContent !== 'English') {
-                    item.remove();
-                }
-            });
         }
     }
 }
@@ -53,4 +45,3 @@ checkForTargetElement();
   const style = document.createElement('style');
     style.textContent = 'iframe[id=":1.container"] { display: none !important; } body {top:0!important }; .goog-logo-link{display:none !important;}.goog-te-gadget{ color:transparent!important;} .VIpgJd-ZVi9od-l4eHX-hSRGPd{display: none} .goog-te-combo { background-color:#fff; color:#000000; border: 1px solid transparent; box-shadow: 0 4px 4px rgba(0,0,0,.1); border-radius:3px; padding:6px 8px; transition: transform .3s;} .skiptranslate.goog-te-gadget{ padding-left: 60px; padding-bottom: 20px;} #goog-gt-tt #goog-gt-vt{ display: none !important; } .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }';
     document.head.appendChild(style);
-}
