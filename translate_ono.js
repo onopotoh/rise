@@ -18,8 +18,8 @@ function createGoogleTranslateWidget() {
     if (!window.googleTranslateElementInit) {
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
-                pageLanguage: 'id',
-                includedLanguages: 'en,id,ms,en-GB',
+                pageLanguage: 'en',
+                includedLanguages: 'id,ms,en-GB,en',
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
         }
