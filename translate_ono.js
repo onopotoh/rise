@@ -53,7 +53,7 @@ checkForTargetElement();
     .skiptranslate.goog-te-gadget { padding-left: 60px; padding-bottom: 20px; }
     #goog-gt-tt #goog-gt-vt { display: none !important; }
     .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }
-    .goog-te-menu-value span { display: none; } // Hide "Select Language" text
+    //.goog-te-menu-value span { display: none; } // Hide "Select Language" text
     .goog-te-menu-value:hover { cursor: pointer; }
     .goog-te-menu2-item { display: inline-block; margin-right: 10px; cursor: pointer; }
 `;
