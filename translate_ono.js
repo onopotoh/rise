@@ -22,19 +22,7 @@ function createGoogleTranslateWidget() {
                 includedLanguages: 'id,en-GB,en',
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
-            // Find the "English" button and customize its appearance and behavior
-            const englishButton = document.querySelector('.goog-te-gadget:contains("English")');
-            if (englishButton) {
-                englishButton.textContent = 'Translate to English'; // Change the button text
-                englishButton.style.backgroundColor = 'blue'; // Customize button style
-
-                englishButton.addEventListener('click', () => {
-                    // Trigger translation to English when the button is clicked
-                    widget.showBanner(false); // Hide the translation banner
-                    widget.showOverlay(false); // Hide the translation overlay
-                    widget.translatePage('en'); // Translate to English
-                });
-            }
+            
         }
     }
 }
@@ -63,13 +51,13 @@ style.textContent = `
    iframe[id=":1.container"] { display: none !important; } body {top:0!important }; 
    .goog-logo-link{display:none !important;}.goog-te-gadget{ color:transparent!important;} 
    .VIpgJd-ZVi9od-l4eHX-hSRGPd{display: none} 
-   #.goog-te-combo { background-color:#fff; 
+   .goog-te-combo { background-color:#fff; 
    color:#000000; border: 1px solid transparent; 
    box-shadow: 0 4px 4px rgba(0,0,0,.1); 
    border-radius:3px; 
    padding:6px 8px; 
    transition: transform .3s;} 
-   #.skiptranslate.goog-te-gadget{ padding-left: 60px; padding-bottom: 20px;} 
+   .skiptranslate.goog-te-gadget{ padding-left: 60px; padding-bottom: 20px;} 
    #goog-gt-tt #goog-gt-vt{ display: none !important; } 
    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { display: none !important; }
 `;
