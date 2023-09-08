@@ -18,7 +18,7 @@ function createGoogleTranslateWidget() {
     if (!window.googleTranslateElementInit) {
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en',
+                pageLanguage: 'id',
                 includedLanguages: 'en,id,ms'
                 //layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Set layout to HORIZONTAL
             }, 'google_translate_element');
